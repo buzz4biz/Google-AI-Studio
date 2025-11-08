@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Add Babel Standalone for client-side transpilation of TSX -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script>
       tailwind.config = {
         theme: {
@@ -50,6 +52,7 @@
 </head>
   <body class="bg-brand-bg">
     <div id="root"></div>
-    <script type="module" src="./index.tsx"></script>
+    <!-- Use text/babel to transpile TSX in the browser, and use a root-relative path -->
+    <script type="text/babel" data-type="module" src="/index.tsx"></script>
   </body>
 </html>
